@@ -1,0 +1,84 @@
+body {
+    text-align: center;
+}
+
+body{
+    background-image: url('../images/virusImage.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+ul{
+    text-decoration:none;
+}
+ul, li{
+    display:inline;
+    padding:10px;
+    color:white;
+    font-weight: bold;
+}
+header{
+    border-bottom: white dashed 2px;
+    width:70%;
+    margin:auto;
+}
+#header{
+    display: inline-block;
+    color:white;
+}
+
+#nav{
+    display: inline-block;
+}
+ul, li, a{
+    color:white;
+    text-decoration: none;
+}
+#content{
+    width:80%;
+    color:white;
+    padding:2%;
+    margin:auto;
+}
+figure{
+    padding:2%;
+}
+footer{
+    color:white;
+}
+.types{
+    border:solid white 1px;
+    padding:5px;
+    border-radius: 10px;
+}
+.typeDesc{
+    display: none;
+    opacity: 0;
+}
+.types:hover .typeDesc{
+    display: block;
+    opacity: 1;
+     transition: opacity .6s, display .6s;
+}
+#typesImg{
+    height:170px;
+    width:210px;
+}
+#creationImg{
+    height:300px;
+    width:400px;
+}
+ol li {
+    display: block;
+}
+#citeImg{
+    width:250px;
+    height: 180px;
+}
+#refrences{
+    text-align: left;
+}
+#current{
+    border:1px solid white;
+    border-radius: 5px;
+    padding:3px;
+}
