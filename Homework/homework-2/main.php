@@ -17,9 +17,8 @@ global $sandwhichOutside;
 function gettingSandwichItems($itemAmount){
     
     while ($x <= $itemAmount-1){
-        $i = rand(0, 6);
         $vegNum= $x+1;
-        echo "<h5> Veggie ".$vegNum.":".$restOfVeggiesArray[$i] ."</h5>";
+        echo "<h5> Veggie " .$vegNum. ":" .$restOfVeggiesArray[rand(0,6)]."</h5>";
         $x++;
     }
 }
