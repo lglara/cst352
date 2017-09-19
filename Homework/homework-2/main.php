@@ -19,8 +19,7 @@ function gettingSandwichItems($itemAmount){
     while ($x <= $itemAmount-1){
         $i = rand(0, 6);
         $vegNum= $x+1;
-        echo "<h3> Veggie ".$vegNum.":".$restOfVeggiesArray[$i] ."</h3>";
-        echo $restOfVeggiesArray[$i];
+        echo "<h5> Veggie ".$vegNum.":".$restOfVeggiesArray[$i] ."</h5>";
         $x++;
     }
 }
@@ -46,7 +45,7 @@ echo "<body>
         <header>
             <h2>Your Results:</h2>
         </header>
-        <container>
+        <container><div id='secContainer'>
         ";
 if ($sandwhichType == "veggiterian"){
     $sandwhichOutside ="slice of bread";
@@ -89,7 +88,7 @@ if ($sandwhichType == "veggiterian"){
         echo "<h5>And finally Another </h5>";
         echo $sandwhichOutside;
     }
-    echo"</container>
+    echo"</div></container>
         <footer>
             <span>CST 352-01. 2017&copy; Garica</span><br>
             <b>Disclaimer:</b><span>The information in this webpage is fictitous. </span><br>

@@ -6,7 +6,6 @@ body{
 
 #checkboxes, #button{
     position:relative;
-    display:inline-block;
     height: 40%;
     width:45%;
     margin:auto;
@@ -30,4 +29,10 @@ input{
     border:3px solid teal;
     background-color: orange;
     border-radius: 15px;
+    margin:auto;
+    color:white;
+    font-size: 20px;
+}
+#secContainer h5{
+    color:teal;
 }
