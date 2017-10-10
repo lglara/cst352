@@ -19,7 +19,7 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
 //   echo $item4;
 //   echo $item5;
     
-    echo "<h1>Here are your results $firstName $lastName<br><h1/>";
+    echo "<h1 class='text-success'>Here are your results $firstName $lastName:<br><h1/>";
    
   $foodPoints=0;
     
@@ -40,7 +40,7 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
         $foodPoints=3;
         break;
     default:
-        echo "First Entry Invalid";
+        echo "<div class='text-danger'>First Entry Invalid</div>";
     }
     
     $clothesPoints=0;
@@ -56,7 +56,7 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
         $clothesPoints=1;
         break;
     default:
-        echo "Second Entry Invalid";
+        echo "<div class='text-danger'>Second Entry Invalid</div>";
     }
     
     $skillPoints=0;
@@ -72,7 +72,7 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
         $skillPoints=3;
         break;
     default:
-        echo "Third Entry Invalid";
+        echo "<div class='text-danger'>Third Entry Invalid</div>";
     }
     
     $equipPoints=0;
@@ -88,29 +88,30 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
         $equipPoints=2;
         break;
     default:
-        echo "Third Entry Invalid";
+        echo "<div class='text-danger'>Fourth Entry Invalid</div>";
     }
    
   $randomItemPoints=strlen($item5);
 
-  echo"<h4>Food Selection Points: $foodPoints</h4>";
-  echo"<h4>Clothes Selection Points: $clothesPoints</h4>";
-  echo"<h4>Skill Selection Points: $skillPoints</h4>";
-    echo"<h4>Skill Selection Points: $equipPoints</h4>";
-  echo"<h4>Random Selection Points: $randomItemPoints</h4>";
+  echo"<h4 class='text-success'>Food Selection Points: $foodPoints</h4>";
+  echo"<h4 class='text-success'>Clothes Selection Points: $clothesPoints</h4>";
+  echo"<h4 class='text-success'>Skill Selection Points: $skillPoints</h4>";
+    echo"<h4 class='text-success'>Equipment Selection Points: $equipPoints</h4>";
+  echo"<h4 class='text-success'>Random Selection Points: $randomItemPoints</h4>";
    
   $totalPoints=$foodPoints+$clothesPoints+$skillPoints+$equipPoints+$randomItemPoints;
    
-  echo"Based on my calculations your total is $totalPoints.<br>";
+  echo"<h3>Based on my calculations your total is $totalPoints.</h3><br>";
    
   if($totalPoints<=8){
-      echo "You will survive";
+      echo "<div class='text-success'>You will survive!</div>";
     } else if ($totalPoints<=12) {
-          echo"You might struggle but survive.";
-      } else if ($totalPoints<=16){
-          echo"I would reconsider your selections.";
+          echo"<h3 class='text-warning'>You might struggle but will survive.</h3>";
+      } else if ($totalPoints >=12){
+          echo"<h3 class='text-danger'>I would reconsider your selections.</h3>";
   }
-  echo"<button onclick='window.location.href='https://cst352-01-lglara.c9users.io/lgarcialara/Homework/homework-3/index.php''>Click me</button>";
+  echo"<form action='https://cst352-01-lglara.c9users.io/lgarcialara/Homework/homework-3/index.php'><input type='submit' value='Try Again'></form>
+";
 }
 }                         
 ?>
@@ -130,17 +131,15 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
             <h1>Hello</h1>
             <div id="nameRequest">Please enter the following Information<br>
             First name:<br>
-            <input type="text" name="firstName" required><br>
+            <input type="text" name="firstName" ><br>
             Last name:<br>
-            <input type="text" name="lastName"required>
+            <input type="text" name="lastName">
             </div>
             
             <h2>Please select the items you would like to have on a deserted Island.</h2>
             
-              
-        
             <h4>Item 1: Food</h4>
-             <select name="item1" required>
+             <select name="item1" >
                 <option value="Corn Flakes">Corn Flakes</option>
                 <option value="Water Bottles">Water Bottles</option>
                 <option value="Water Canteen">Water Canteen</option>
@@ -162,35 +161,22 @@ if ( isset($_GET['firstName'],$_GET['lastName'],$_GET['item1'],$_GET['item2'],$_
                 <option value="Rope">Rope</option>
               </select>
             <h4>Item: Random Item</h4>
-            <input type="item5" name="item5" required/>
+            <input type="item5" name="item5" />
             <input type="submit" value="Submit"/>
         </form>
-        <!--<div class="progress">-->
-            //       <?php
-            //       if ( !isset(empty($_GET['item1'])) )  {
-            //           $percentageNum=20;
-            //             }else if(!isset (empty($_GET['item2']))){
-            //                 $percentageNum=40;
-            //             }
-            //             else if(!isset (empty($_GET['item3']))){
-            //                 $percentageNum=60;
-            //             }
-            //             else if(!isset (empty($_GET['item4']))){
-            //                 $percentageNum=80;
-            //             }
-            //             else if(!isset (empty($_GET['item5']))){
-            //                 $percentageNum=100;
-            //             }
-            //       $progressBar=$percentageNum;
-            //     echo "<div class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='$progressBar' aria-valuemin='0' aria-valuemax='100' style='width:$progressBar%'>$progressBar%</div>";
-            //     ?>
-            <!--//   </div>-->
         <?php
         
           if (!isset($_GET["firstName"])) { // is there any parameter called "keyword" in the URL
               echo "<h2>Press Submit to See Your Results!</h2>";
-          } 
+          }     else if ((empty($_GET['firstName']) ))  {
+                              echo "<div id='errorMessage'>";
+                              echo "<h2 style='color:red'> ERROR: Please fill out all of the fields. ";
+                            //   return;
+                              exit; 
+                              echo "</div>";
+          }else{
               processForm();
+          }
           ?>  
           
     </body>
