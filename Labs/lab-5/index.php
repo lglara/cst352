@@ -1,7 +1,7 @@
 <?php
 
 
-include '../../../dbConnection.php';
+include '../../dbConnection.php';
 $dbConn = getDatabaseConnection();
 
 function getRandomQuote() {
