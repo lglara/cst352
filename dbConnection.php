@@ -4,7 +4,7 @@ function getDatabaseConnection() {
     $host = 'us-cdbr-iron-east-05.cleardb.net'; //cloud 9 database
     $dbname = 'heroku_997fb852ab3ceee';
     $username = 'b841a76d65d2f3';
-    $password = '419e605e ';
+    $password = '419e605e';
     
     
     //creates database connection
