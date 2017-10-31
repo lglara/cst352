@@ -1,0 +1,37 @@
+body{
+    width:80%;
+    margin:auto;
+    background-color:#148F77   ;
+    font-style: italic;
+    color:white;
+    font-family: fantasy;
+
+}
+#authorName{
+    color:#F4D03F;
+}
+a {
+    text-decoration: none !important;
+}
+#authorNameIFrame{
+    font-weight: bold;
+    
+}
+.img{
+    height:100px;
+    width:100px;
+}
+iframe{
+    border:none;
+    border-top:1px solid black;
+}
+h1{
+    color: pink;
+}
+#filterBtn{
+    background-color: white;
+    color:pink;
+    font-weight: bold;
+border-color: white;
+border-radius: 25px;
+}
