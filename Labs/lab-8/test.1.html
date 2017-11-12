@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Guess a Number </title>
+        <meta charset="utf-8" />
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        
+        <!--Bootstrap files-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!--Custom Styles-->
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Guess a Number</h1>
+        </div>
+        
+        <div id="directions">
+            Guess a number between 1 and 99 in seven attempts!
+            <!--<div>Random Number to guess <span id="numberToGuess"></span></div>-->
+            <form>
+                <label for="guessField">Enter a guess:</label>
+                <input class="guessField" id="guessField" type="text" />
+                <input class="guessSubmit" type="submit" value="Submit"/>
+            </form>
+            </br>
+            <p id="guesses"></p>
+            <p id="lastResult"></p>
+            <p id="lowOrHigh"></p>
+            <button id="resetButton">Reset</button>
+        </div>
+        <script>
+            // //creating the random number
+            // randomNumber=Math.floor(Math.random()*99)+1;
+            // console.log(randomNumber);
+            
+            // //adding that random number to the web page
+            // // document.getElementById("numberToGuess").innerHTML=randomNumber;
+            
+            // //doc divs storing info (using id's)
+            // var guesses= document.querySelector("#guesses");
+            // var lastResult=document.querySelector("#lastResult");
+            // var lowOrHigh=document.querySelector("#lowOrHigh");
+            
+            // //doc divs we want info from (using class)
+            // var guessSubmit=document.querySelector('.guessSubmit');
+            // var guessField=document.querySelector('.guessField')
+            // guessField.focus();
+            
+            // //variales to document
+            // var guessCount=1;
+            // var resetButton=document.querySelector('#resetButton');
+            // resetButton.style.display="none";
+            
+            // function checkGuess(){
+            //     var userGuess=Number(guessField.value);
+            //     console.log(userGuess);
+            //     if(guessCount === 1){
+            //         guesses.innerHTML="Previous guesses:";
+            //     }
+            //     guesses.innerHTML += userGuess + " ";
+                
+            //     if(userGuess === randomNumber){
+            //         lastResult.innerHTML="Congratulations! You got it right!";
+            //         lastResult.style.backgroundColor="green";
+            //         lowOrHigh.innerHTML="";
+            //         setGameOver();
+            //     } else if (guessCount === 7){
+            //         lastResult.innerHTML="Sorry, you lost.";
+            //         setGameOver();
+            //     }else{
+            //         lastResult.innerHTML="Wrong!";
+            //         lastResult.style.backgroundColor='red';
+            //             if(userGuess < randomNumber){
+            //                 lowOrHigh.innerHTML="Last guess was too low!";
+            //             }else if (userGuess > randomNumber){
+            //                 lowOrHigh.innerHTML="Last guess was too High!";
+            //             }
+            //     }
+            //     guessCount++;
+            //     guessField.value="";
+            //     guessField.focus();
+            // }
+            
+            // guessSubmit.addEventListener("click", checkGuess());
+            
+            // function setGameOver(){
+            //     guessField.disable=true;
+            //     guessSubmit.disable=true;
+            //     resetButton.style.display="inline";
+            //     resetButton.addEventListener('click', resetGame);
+            // }
+            // function resetGame(){
+            //     guessCount =1;
+                
+            //     var resetParas= document.querySelectorAll('.resultParas p');
+            //     for (var i=0; i<resetParas.length; i++){
+            //         resetParas[i].textContent='';
+            //     }
+            //     resetButton.style.display="none";
+                
+            //     guessField.disable=true;
+            //     guessSubmit.disable=true;
+            //     guessField.value='';
+            //     guessField.focus();
+                
+            //     lastResult.style.backgroundColor="white";
+            //     randomNumber=Math.floor(Math.random() *99)+1;
+            // }
+            
+            
+            
+    var randomNumber = Math.floor(Math.random() * 99) + 1;
+      var guesses = document.querySelector('#guesses');
+      var lastResult = document.querySelector('#lastResult');
+      var lowOrHi = document.querySelector('#lowOrHi');
+
+      var guessSubmit = document.querySelector('.guessSubmit');
+      var guessField = document.querySelector('.guessField');
+    
+      var guessCount = 1;
+      var resetButton = document.querySelector('#resetButton');
+      resetButton.style.display = 'none';
+      guessField.focus();
+      
+      function checkGuess() {
+            var userGuess = Number(guessField.value);
+            if (guessCount === 1) {
+                guesses.innerHTML = 'Previous guesses: ';
+            }
+            guesses.innerHTML += userGuess + ' ';
+            
+              if (userGuess === randomNumber) {
+                lastResult.innerHTML = 'Congratulations! You got it right!';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.innerHTML = '';
+                setGameOver();
+              } else if (guessCount === 7) {
+                lastResult.innerHTML = 'Sorry, you lost!';
+                setGameOver();
+              } else {
+                lastResult.innerHTML = 'Wrong!';
+                lastResult.style.backgroundColor = 'red';
+                if(userGuess < randomNumber) {
+                  lowOrHi.innerHTML = 'Last guess was too low!';
+                } else if(userGuess > randomNumber) {
+                  lowOrHi.innerHTML = 'Last guess was too high!';
+                }
+              }
+             
+              guessCount++;
+              guessField.value = '';
+              guessField.focus();
+      }
+      
+      guessSubmit.addEventListener('click', checkGuess);
+      
+      function setGameOver() {
+        guessField.disabled = true;
+        guessSubmit.disabled = true;
+        resetButton.style.display = 'inline';
+        resetButton.addEventListener('click', resetGame);
+      }
+      
+      function resetGame() {
+        guessCount = 1;
+      
+        var resetParas = document.querySelectorAll('.resultParas p');
+        for (var i = 0 ; i < resetParas.length ; i++) {
+          resetParas[i].textContent = '';
+        }
+      
+        resetButton.style.display = 'none';
+      
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = '';
+        guessField.focus();
+      
+        lastResult.style.backgroundColor = 'white';
+      
+        randomNumber = Math.floor(Math.random() * 99) + 1;
+      }
+        </script>
+    </body>
+</html>
+
+      
