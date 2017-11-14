@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 4</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+    </head>
+    <body>
+        <h1><b>Are you Smarter than a 5th Grader?</b></h1>
+        <h2 id="usersName"></h2>
+        
+        <form id="questionsForm">
+            <label for="userName">Please enter your name:</label>
+            <input type="text" id="userName"/><br><br>
+            
+            <label for="question1">Question 1: Inca civilizations were concentrated on what continent?</label><br>
+            <input type="checkbox" id="q1a" value="A">A: South America<br>
+            <input type="checkbox" id="q1b" value="B">B: Africa<br>
+            <input type="checkbox" id="q1c" value="C">C: North America<br> <!--CORRECT-->
+            <input type="checkbox" id="q1d" value="D">D: Asia<br>
+            <input type="checkbox" id="q1e" value="E">E: Europe<br>
+            <span id="ques1Answer"></span><br><br>
+            
+            <label for="question2">"Carefully" is an example of what type of word?</label><br>
+            <select id="question2">
+              <option value="A">A: Adjective</option>
+              <option value="B">B: Noun</option>
+              <option value="C">C: Verb</option>
+              <option value="D">D: Adverb</option><!--CORRECT-->
+              <option value="E">E: Pronoun</option>
+            </select><br>
+            <span id="ques2Answer"></span><br><br>
+            
+            <label for="question3">Which one of the following states is NOT part of the Four Corners?</label><br>
+            <input type="radio" id="q3a" value="A"> A: New Mexico<br>
+            <input type="radio" id="q3b" value="B"> B: Utah<br>
+            <input type="radio" id="q3c" value="C"> C: Colorado<br>
+            <input type="radio" id="q3d" value="D"> D: Arizona<br>
+            <input type="radio" id="q3e" value="D"> E: Nevada<br><!--CORRECT-->
+            <span id="ques3Answer"></span><br><br>
+            
+            <label for="question4">Which of the following states is NOT on the Gulf of Mexico?</label><br>
+            <input type="checkbox" name="question4" value="A">A: Georgia<br> <!--CORRECT-->
+            <input type="checkbox" name="question4" value="B">B: Texas<br>
+            <input type="checkbox" name="question4" value="C">C: Florida<br>
+            <input type="checkbox" name="question4" value="D">D: Alabama<br>
+            <input type="checkbox" name="question4" value="E">E: Louisiana<br>
+            <span id="ques4Answer"></span><br><br>
+
+            <label for="question5">A Heptagon is a shape with how many sides?</label><br>
+            <select id="question5">
+              <option value="A">A: 4</option>
+              <option value="B">B: 5</option>
+              <option value="C">C: 8</option>
+              <option value="D">D: 7</option><!--CORRECT-->
+              <option value="E">E: 9</option>
+            </select><br>
+            <span id="ques5Answer"></span><br><br>
+            
+            <label for="question6">What planet is closest to the sun?</label><br>
+            <input type="radio" name="question6" value="A"> Venus<br>
+            <input type="radio" name="question6" value="B"> Mercury<br><!--CORRECT-->
+            <input type="radio" name="question6" value="C"> Earth<br>
+            <span id="ques6Answer"></span><br><br>
+            
+            <input type="button" id="submit" value="Submit"/>
+            <h3 id="totalScore"></h3>
+        </form>
+    </body>
+</html>
