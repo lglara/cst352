@@ -1,0 +1,93 @@
+body{
+    width:90%;
+    margin:auto;
+}
+
+.inlineDisplay{
+    display:inline-block;
+    width:30%;
+    height: 200px;
+}
+.nextToEachother{
+     display: inline-block;
+      height: 300px;
+      width:32%;
+      border:black 1px solid;
+      text-align:center;
+      padding:5px;
+      position:relative;
+}
+#smallInline{
+    display: inline-block;
+     height: 50px;
+     width:40%;
+}
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+    width:100px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+#header{
+   padding:20px; 
+}
+.dropbtn {
+    background-color: pink;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+div{
+    padding:3px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: lightblue;
+}
+#tableWrapper{
+margin:auto;
+padding:10px;
+content:center;}
+
+#table1, #table2, #table3{
+    padding-top:none;
+}
