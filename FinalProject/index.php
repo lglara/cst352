@@ -45,7 +45,7 @@ function getPants(){
     <h1><center>Welcome!</center></h1>
     
     <div id="table1" class="nextToEachother">
-        <h2>Table Info</h2>
+        <h2>Pants Table Info</h2>
         <?php
         $pants = getPants();
             foreach($pants as $pant) {
@@ -63,7 +63,7 @@ function getPants(){
             <div id="pAvg" class="smallInline"></div>
         </div>
     <div id="table2" class="nextToEachother">
-        <h2>Table Info</h2>
+        <h2>Shirts Table Info</h2>
         <?php
             $shirts = getShirts();
             foreach($shirts as $shirt) {
@@ -80,7 +80,7 @@ function getPants(){
             <div id="shTotals" class="smallInline"></div>
             <div id="shAvg" class="smallInline"></div>
         </div>
-    <div id="table3" class="nextToEachother"><h2>Table Info</h2>
+    <div id="table3" class="nextToEachother"><h2>Shoes Table Info</h2>
     <?php
             $shoes = getShoes();
             foreach($shoes as $shoe) {
