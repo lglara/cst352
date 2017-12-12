@@ -10,8 +10,8 @@ body{
 }
 .nextToEachother{
      display: inline-block;
-      height: 300px;
-      width:32%;
+      height: 600px;
+      width:30%;
       border:black 1px solid;
       text-align:center;
       padding:5px;
